@@ -1,0 +1,45 @@
+.logo {
+    height: 47px;
+}
+
+nav > ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.align-right {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-pink);
+    font-size: 0.75rem;
+}
+
+@media screen and (min-width: 960px){
+
+    .logo {
+        height: 68px;
+    }
+
+    nav > ul {
+        text-transform: none;
+    } 
+
+    .align-right {
+        margin-right: 60px;
+    }
+
+    a {
+        font-size: 1.5rem;
+    }
+
+    a:hover {
+        text-decoration-line: underline;
+    }
+}
