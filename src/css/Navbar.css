@@ -1,5 +1,5 @@
 .logo {
-    height: 47px;
+    max-height: 47px;
 }
 
 nav > ul {
@@ -22,6 +22,9 @@ a {
 }
 
 @media screen and (min-width: 960px){
+    nav {
+        margin: 0 auto;
+    }
 
     .logo {
         height: 68px;
@@ -43,3 +46,4 @@ a {
         text-decoration-line: underline;
     }
 }
+
