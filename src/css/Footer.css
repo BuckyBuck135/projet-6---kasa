@@ -1,0 +1,23 @@
+.footer {
+    height: 200px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    gap: 40px;
+    font-size: 0.75rem;
+}
+
+.footer--logo {
+    margin: 0 auto;
+    padding: 60px 0 30px 0;
+}
+
+@media screen and (min-width: 960px){
+    .footer {
+        gap: 30px;
+    }
+
+    .footer--text {
+        font-size: 1.5rem;
+    }
+}

@@ -2,6 +2,10 @@
     max-height: 47px;
 }
 
+nav {
+    padding: 20px;
+}
+
 nav > ul {
     list-style-type: none;
     display: flex;
@@ -24,6 +28,7 @@ a {
 @media screen and (min-width: 960px){
     nav {
         margin: 0 auto;
+        padding: 40px 100px;
     }
 
     .logo {

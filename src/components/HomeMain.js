@@ -1,14 +1,13 @@
 import React from "react";
-import "../css/Main.css"
+import "../css/HomeMain.css"
 import Card from "./Card";
 
-const data = require("../logements.json");
+const data = require("../data/logements.json");
 
-export default function Main(props) {
+export default function HomeMain(props) {
     const cards = data.map(item => {
         return (
             <Card 
-            //still getting a warning in spite of setting the key to the item's unique ID
                 key={item.id}
                 item={item}
             />
