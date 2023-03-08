@@ -3,8 +3,7 @@
     align-items: center;
     width: 100%;
     min-height: 110px;
-    background:  rgb(0, 0, 0, 0.3) url(/public/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg);
-    background-size: 200%;
+    background: url(/public/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg);
     background-position: center;
     mix-blend-mode: multiply;
     border-radius: 10px;
