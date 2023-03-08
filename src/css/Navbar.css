@@ -28,7 +28,7 @@ a {
 @media screen and (min-width: 960px){
     nav {
         margin: 0 auto;
-        padding: 40px 100px;
+        padding: 40px 100px 20px 100px;
     }
 
     .logo {

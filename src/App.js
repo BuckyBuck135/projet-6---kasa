@@ -15,8 +15,8 @@ export default function App() {
     <div className="app">
       <Navbar />
       <div className="container">
-        <LogementMain />
-        
+      <HomeHero />
+      <HomeMain />
       </div>
       <Footer />
     </div>
@@ -28,3 +28,4 @@ export default function App() {
 // <HomeMain />
 // <NotFound />
 // <APropos />
+// <LogementMain />

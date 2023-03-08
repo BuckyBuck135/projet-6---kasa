@@ -1,20 +1,24 @@
 article.card {
     height: 255px;
     display: flex;
-    border-radius: 10px;
-
-    /*background-image is dynamically managed by the Card component*/
-    background-size: cover;
-
+    position: relative;
     /*perhaps try to set this gradient as fallback?*/
-    /* background: linear-gradient(180deg, #FF6060 0%, rgb(255, 96, 96, 0.5) 100%); */
+    /* background: linear-gradient(180deg, #FF6060 0%, rgb(255, 96, 96, 0.5) 100%);
+    border-radius: 10px; */
+}
+
+.card--image {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
 }
 
 .card--title {
     color: white;
     font-size: 1.125rem;
     font-weight: 500;
-    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
     margin: 15px 20px;
 
     /*added for text visibility*/
@@ -22,7 +26,6 @@ article.card {
     padding: 5px 10px;
     border-radius: 10px;
     text-shadow: 0 0 50px black;
-
 }
 
 @media screen and (min-width: 960px){
