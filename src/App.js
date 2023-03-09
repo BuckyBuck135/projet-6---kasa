@@ -1,8 +1,8 @@
 import './css/App.css';
 import React from "react";
 import Navbar from "./components/Navbar.js"
-import HomeHero from "./components/HomeHero.js"
-import HomeMain from "./components/HomeMain.js"
+import Hero from "./components/Hero.js"
+import Main from "./components/Main.js"
 import NotFound from "./components/NotFound.js"
 import APropos from "./components/APropos.js"
 import LogementMain from "./components/LogementMain.js"
@@ -15,8 +15,8 @@ export default function App() {
     <div className="app">
       <Navbar />
       <div className="container">
-      <HomeHero />
-      <HomeMain />
+      <Hero />
+      <Main />
       </div>
       <Footer />
     </div>
@@ -24,8 +24,8 @@ export default function App() {
 }
 
 // removed from App() until I know how to organize the different pages
-// <HomeHero />
-// <HomeMain />
+// <Hero />
+// <Main />
 // <NotFound />
 // <APropos />
 // <LogementMain />

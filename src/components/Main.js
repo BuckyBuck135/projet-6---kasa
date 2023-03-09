@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/HomeMain.css"
+import "../css/Main.css"
 import Card from "./Card";
 
 const data = require("../data/logements.json");
