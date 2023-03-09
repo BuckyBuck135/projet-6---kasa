@@ -1,7 +1,7 @@
 import React from "react";
-import "../css/Hero.css"
+import "./Hero.css"
 
-export default function HomeHero() {
+export default function Hero() {
     return (
         <section className="hero">
             <img src="images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg" className="hero--image" alt="Paysage en plan large" />

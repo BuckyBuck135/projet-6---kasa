@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/NotFound.css"
+import "./NotFound.css"
 
 //need to insert a route to home page
 

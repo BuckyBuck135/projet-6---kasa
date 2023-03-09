@@ -1,10 +1,10 @@
 import React from "react";
-import "../css/Main.css"
-import Card from "./Card";
+import "./Home.css"
+import Card from "../../components/Card/Card";
 
-const data = require("../data/logements.json");
+const data = require("../../data/logements.json");
 
-export default function HomeMain(props) {
+export default function Home() {
     const cards = data.map(item => {
         return (
             <Card 
@@ -14,7 +14,7 @@ export default function HomeMain(props) {
         )
     })
     return (
-        <section className="main">
+        <section className="home">
             {cards}
         </section>
     )

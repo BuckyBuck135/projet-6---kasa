@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Tag.css"
+import "./Tag.css"
 
 // implement dropdown arrow function
 
