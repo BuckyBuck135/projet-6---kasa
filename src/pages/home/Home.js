@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css"
+import Hero from "../../components/Hero/Hero";
 import Card from "../../components/Card/Card";
 
 const data = require("../../data/logements.json");
@@ -15,7 +16,12 @@ export default function Home() {
     })
     return (
         <section className="home">
+            <Hero 
+                image="images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg"
+                title="Chez vous, partout et ailleurs"
+            />
             {cards}
+            
         </section>
     )
 }

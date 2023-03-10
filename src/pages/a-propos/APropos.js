@@ -1,6 +1,7 @@
 import React from "react";
+import Hero from "../../components/Hero/Hero";
 import Collapsible from "../../components/Collapsible/Collapsible"
-import "./APropos.css"
+// import "./APropos.css"
 
 //need to insert a route to home page
 //active tag on the A propos anchor on navbar
@@ -8,7 +9,10 @@ import "./APropos.css"
 export default function APropos() {
     return (
         <section className="a-propos">
-            <div className="a-propos--hero"></div>
+            <Hero 
+                image="images/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png"
+                title={null}
+            />
             
             <Collapsible 
                title="Fiabilité" 
