@@ -1,4 +1,4 @@
-.a-propos--hero {
+/* .a-propos--hero {
     min-height: 220px;
     background:  rgb(0, 0, 0, 0.3) url(/public/images/kalen-emsley-Bkci_8qcdvQ-unsplash\ 2.png);
     background-position: center;
@@ -6,6 +6,10 @@
     mix-blend-mode: multiply;
     border-radius: 10px;
     margin-bottom: 20px;
+} */
+
+section.a-propos img.hero--image {
+    height: 220px
 }
 
 @media screen and (min-width: 960px){

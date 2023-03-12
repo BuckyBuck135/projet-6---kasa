@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import "./NotFound.css"
 
 //need to insert a route to home page
@@ -12,7 +13,7 @@ export default function NotFound() {
                 <span>4</span>
             </h1>
             <h2 className="not-found--subtitle">Oups ! La page que vous demandez n'existe pas.</h2>
-            <p className="not-found--paragraph"><a href="#">Retourner sur la page d’accueil</a></p>
+            <p className="not-found--paragraph"><Link to="/">Retourner sur la page d’accueil</Link></p>
         </section>
     )
 }

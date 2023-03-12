@@ -1,25 +1,24 @@
-import React from "react";
+import React from "react"
+import { useParams } from "react-router-dom";
 import "./FicheLogement.css"
 import Tag from "../../components/Tag/Tag"
 
 const data = require("../../data/logements.json");
 
 export default function FicheLogement() {
-    const tags = data.map(item => {
-        return (
-            // WIP => I actually want 1 tag per div, not all tags in one div
-            <Tag 
-                key={item.id}
-                tags={item.tags.join(" ")}
-            />
-        )
-    })
+    const params = useParams()
+    console.log(params)
+    // const tags = data.map(item => {
+    //     return (
+    //         <h1>Logement</h1>
+    //     )
+    // })
 
 
 
     return (
         <section className="main">
-            {tags}
+            <h1>Logement {params.id}</h1>
         </section>
     )
 }

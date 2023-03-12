@@ -15,12 +15,16 @@ export default function Home() {
         )
     })
     return (
-        <section className="home">
-            <Hero 
+        <section>
+            <section>
+                <Hero 
                 image="images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg"
                 title="Chez vous, partout et ailleurs"
-            />
-            {cards}
+                />
+            </section>
+            <section className="home">
+                {cards}
+            </section>
             
         </section>
     )

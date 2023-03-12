@@ -20,6 +20,7 @@ nav > ul {
 }
 
 a {
+    cursor: pointer;
     text-decoration: none;
     color: var(--main-pink);
     font-size: 0.75rem;
