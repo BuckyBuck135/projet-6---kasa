@@ -25,10 +25,26 @@
     font-weight: 500;
 }
 
-.collapsible--text {
+
+
+.collapsible--text,
+.collapsible--li {
     color: var(--main-pink);
     font-weight: 400;
+}
+
+.collapsible--text {
     padding: 23px 12px;
+}
+
+.collapsible--text-container > ul {
+    list-style: none;
+    padding: 30px 20px;
+}
+
+.collapsible--li {
+    line-height: 26px;
+    font-size: 1.125rem;
 }
 
 @media screen and (min-width: 960px){

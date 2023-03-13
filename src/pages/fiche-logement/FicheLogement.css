@@ -1,0 +1,33 @@
+section.main {
+    border: 1px solid red;
+    color: var(--main-pink);
+}
+
+.listing--image {
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.listing--heading  {
+    margin-bottom: 20px;
+}
+
+.listing--heading h1 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.listing--heading h2 {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 960px){
+    .listing--heading h1 {
+        font-size: 2.25rem;
+    }
+    
+    .listing--heading h2 {
+        font-size: 1.125rem;
+    }
+}

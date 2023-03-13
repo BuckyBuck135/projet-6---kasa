@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css"
 import Hero from "../../components/Hero/Hero";
 import Card from "../../components/Card/Card";
+import headerImage from "../../images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg"
 
 const data = require("../../data/logements.json");
 
@@ -18,7 +19,7 @@ export default function Home() {
         <section>
             <section>
                 <Hero 
-                image="images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg"
+                image={headerImage}
                 title="Chez vous, partout et ailleurs"
                 />
             </section>
