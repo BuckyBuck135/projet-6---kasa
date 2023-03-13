@@ -5,9 +5,14 @@ import "./Tag.css"
 
 // props are passed on from MainLogement
 export default function Tag(props) {
+    const tags = props.tags.map((item, index) => {
+        return <div key={index} className="tag--wrapper">
+            <span className="tag--title">{item}</span>
+                </div>
+    })
     return (
-        <article className="tag">
-            <h3 className="tag--title">{props.tags}</h3>
-        </article>
+        <div className="tag--container">
+            {tags}
+        </div>
     )
 }

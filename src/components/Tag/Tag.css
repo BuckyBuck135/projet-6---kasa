@@ -1,0 +1,32 @@
+.tag--container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tag--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 84px;
+    height: 18px;
+    background: var(--main-pink);
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+
+.tag--title {
+    color: white;
+    font-size: 0.875rem;
+}
+
+/* media query*/ 
+@media screen and (min-width: 960px){}
+    .tag--wrapper {
+        max-width: 80px;
+        /* padding: 3px 40px; */
+    }
+
+    .tag--title {
+    font-size: 0.625rem;
+}
