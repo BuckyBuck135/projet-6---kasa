@@ -22,8 +22,7 @@
     text-decoration: underline;
 }
 
-
-span {
+.not-found span {
     display: inline-block;
     animation: wave-text 2s ease-in-out;
   }
