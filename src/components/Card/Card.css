@@ -13,6 +13,12 @@ article.card {
     border-radius: 10px;
     object-fit: cover;
     width: 100%;
+    filter:brightness(85%);
+    transition: 0.3s;
+}
+
+.card--image:hover {
+    filter: none;
 }
 
 .card--title {
@@ -30,15 +36,13 @@ article.card {
     text-shadow: 0 0 50px black;
 }
 
-@media screen and (min-width: 960px){
+@media screen and (min-width: 768px){
 
     section.home > a {
-        flex: 1 1 340px;
-        height: 340px;
+        flex: 1 1 250px;
     }
     
     article.card {
-        flex: 1 1 340px;
         height: 340px;
     }
 

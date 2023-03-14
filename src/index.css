@@ -64,9 +64,9 @@ body {
 }
 
 
-@media screen and (min-width: 960px){
+/* @media screen and (min-width: 960px){
     nav,
     section {
         max-width: 1240px;
     }
-}
+} */

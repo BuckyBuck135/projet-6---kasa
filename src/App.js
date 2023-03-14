@@ -19,10 +19,10 @@ export default function App() {
           <Navbar />
           <div className="container">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/a-propos" element={<APropos />} />
               <Route path="/fiche-logement/:id" element={<FicheLogement />} />
-              <Route path="/not-found" element={<NotFound />} />
+              <Route path="/a-propos" element={<APropos />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/*" element={<NotFound />} />
             </Routes>
           </div>
           <Footer />

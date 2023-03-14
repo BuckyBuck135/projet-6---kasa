@@ -3,7 +3,6 @@
     background-color: var(--container-grey);
     margin-bottom: 20px;
     border-radius: 5px;
-    font-size: 0.75rem;
 }
 
 .collapsible--title-container {
@@ -25,15 +24,14 @@
     font-weight: 500;
 }
 
-
-
-.collapsible--text,
+.collapsible--description,
 .collapsible--li {
     color: var(--main-pink);
+    font-size: 0.75rem;
     font-weight: 400;
 }
 
-.collapsible--text {
+.collapsible--description {
     padding: 23px 12px;
 }
 
@@ -43,8 +41,7 @@
 }
 
 .collapsible--li {
-    line-height: 26px;
-    font-size: 1.125rem;
+    line-height: 17px;
 }
 
 @media screen and (min-width: 960px){
@@ -63,7 +60,17 @@
         height: 30px
     }
 
-    .collapsible--text {
+    .collapsible--description {
         padding: 30px 18px 19px 18px;
     }
+
+    .collapsible--description,
+    .collapsible--li {
+        font-size: 1.125rem;
+    }
+
+    .collapsible--li {
+        line-height: 26px;
+    }
+
 }

@@ -13,7 +13,7 @@ export default function Collapsible(props) {
                     <img src={downArrow} className="collapsible--icon" alt="icône flèche vers le bas."/>
                 </div>
                 <div className="collapsible--text-container">
-                    <p className="collapsible--text">{props.text}</p>
+                    <p className="collapsible--description">{props.description}</p>
                 </div>
             </article>
         )
