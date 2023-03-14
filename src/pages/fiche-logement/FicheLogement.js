@@ -13,7 +13,6 @@ const data = require("../../data/logements.json");
 export default function FicheLogement() {
     const params = useParams()
     const listing = data.find(item => item.id === params.id)
-    console.log(listing.description)
 
     return (
         <section className="main">
@@ -23,31 +22,36 @@ export default function FicheLogement() {
             </div>
 
             <div className="listing--content">
-                <div className="listing--heading">
-                    <h1>{listing.title}</h1>
-                    <h2>{listing.location}</h2>
-                </div>
-                <Tag 
-                    tags={listing.tags}
-                />
+                <div className="listing--content-wrapper">
+                    <div className="listing--wrapper-left">
+                        <div className="listing--heading">
+                            <h1>{listing.title}</h1>
+                            <h2>{listing.location}</h2>
+                        </div>
+                        <Tag 
+                            tags={listing.tags}
+                        />
+                    </div>
 
-                <div className="flex-container">
-                    <StarRating />
-                    <Host 
-                        host={listing.host}
-                    />
+                    <div className="listing--wrapper-right">
+                        <StarRating />
+                        <Host 
+                            host={listing.host}
+                        />
+                    </div>
                 </div>
-
                 <div className="collapsible-container">
                     <Collapsible 
                         type="paragraph"
                         title="Description"
                         description={listing.description}
+                        equipments={null}
                     />
 
                     <Collapsible 
                         type="list"
                         title="Equipements"
+                        description={null}
                         equipments={listing.equipments}
                     />
                 </div>

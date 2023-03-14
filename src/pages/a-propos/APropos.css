@@ -12,7 +12,7 @@ section.a-propos img.hero--image {
     height: 220px
 }
 
-@media screen and (min-width: 960px){
+@media screen and (min-width: 768px){
     .a-propos--hero {
         margin-bottom: 30px;
     }

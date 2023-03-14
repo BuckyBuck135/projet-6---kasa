@@ -3,6 +3,11 @@ section.main {
     color: var(--main-pink);
 }
 
+.listing--content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .listing--image {
     border-radius: 10px;
     margin-bottom: 15px;
@@ -22,14 +27,21 @@ section.main {
     font-weight: 500;
 }
 
-.flex-container {
+.listing--wrapper-right{
+    border: 1px solid green;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
-@media screen and (min-width: 960px){
+@media screen and (min-width: 768px){
+    .listing--content-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     .listing--heading h1 {
         font-size: 2.25rem;
     }
@@ -38,6 +50,10 @@ section.main {
         font-size: 1.125rem;
     }
 
+    .listing--wrapper-right {
+        flex-direction: column-reverse;
+    }
+    
     .collapsible-container {
         display: flex;
         gap: 75px;

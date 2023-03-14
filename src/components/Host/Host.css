@@ -1,8 +1,8 @@
 .host--wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 80px;
+    width: 100px;
     gap: 10px;
 }
 
@@ -16,4 +16,15 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
+}
+
+@media screen and (min-width: 768px){
+    .host--name {
+        font-size: 1.125rem;
+    }
+
+    .host--image {
+        width: 64px;
+        height: 64px;
+    }
 }
