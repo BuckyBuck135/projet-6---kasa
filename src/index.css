@@ -60,13 +60,4 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    background-color: var(--body-grey);
 }
-
-
-/* @media screen and (min-width: 768px){
-    nav,
-    section {
-        max-width: 1240px;
-    }
-} */
