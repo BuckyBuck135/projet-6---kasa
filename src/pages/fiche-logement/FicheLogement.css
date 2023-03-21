@@ -1,16 +1,15 @@
 section.main {
-    border: 1px solid red;
     color: var(--main-pink);
+}
+
+/* adding min-height to avoid layout shift when both collapsibles are closed*/
+.listing--content {
+    min-height: 550px
 }
 
 .listing--content-wrapper {
     display: flex;
     flex-direction: column;
-}
-
-.listing--image {
-    border-radius: 10px;
-    margin-bottom: 15px;
 }
 
 .listing--heading  {
@@ -28,7 +27,6 @@ section.main {
 }
 
 .listing--wrapper-right{
-    border: 1px solid green;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,10 +34,16 @@ section.main {
 }
 
 @media screen and (min-width: 768px){
+
+    .listing--content {
+        min-height: 580px
+    }
+
     .listing--content-wrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-bottom: 25px;
     }
 
     .listing--heading h1 {
@@ -52,12 +56,11 @@ section.main {
 
     .listing--wrapper-right {
         flex-direction: column-reverse;
+        align-items: flex-end;
     }
     
     .collapsible-container {
         display: flex;
         gap: 75px;
     }
-
-    /* WIP - rating+host container on desktop */
 }

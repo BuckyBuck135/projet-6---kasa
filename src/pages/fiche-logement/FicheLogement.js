@@ -1,6 +1,7 @@
 import React from "react"
 import { useParams } from "react-router-dom";
 import "./FicheLogement.css"
+import Carrousel from "../../components/Carrousel/Carrousel";
 import Tag from "../../components/Tag/Tag"
 import Collapsible from "../../components/Collapsible/Collapsible"
 import StarRating from "../../components/StarRating/StarRating"
@@ -17,9 +18,9 @@ export default function FicheLogement() {
     return (
         <section className="main">
             
-            <div className="listing--image-container">
-                <img src={listing.cover} className="listing--image" alt="Diaporama du logement" />
-            </div>
+            <Carrousel 
+                listing={listing}
+            />
 
             <div className="listing--content">
                 <div className="listing--content-wrapper">
@@ -34,7 +35,9 @@ export default function FicheLogement() {
                     </div>
 
                     <div className="listing--wrapper-right">
-                        <StarRating />
+                        <StarRating 
+                            rating={listing.rating}
+                        />
                         <Host 
                             host={listing.host}
                         />
