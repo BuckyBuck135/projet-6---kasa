@@ -1,16 +1,18 @@
 import React from "react";
-import pinkStar from "../../images/pink-star.png"
-import greyStar from "../../images/grey-star.png"
+import pinkVector from "../../images/pink-star-vector.svg"
+import greyVector from "../../images/grey-star-vector.svg"
 import "./StarRating.css"
 
-export default function StarRating() {
+export default function StarRating(props) {
+    const ratingRange = [1, 2, 3, 4, 5]
+    const stars = ratingRange.map((item, index) => {
+      return props.rating >= item ? 
+        <img key={index} src={pinkVector} className="star" alt="icône étoile pour note du logement"/> : 
+        <img key={index} src={greyVector} className="star" alt="icône étoile pour note du logement"/>
+    })
     return (
       <div className="star-rating">
-        <img src={pinkStar} className="star" alt="star icon." />
-        <img src={pinkStar} className="star" alt="star icon." />
-        <img src={pinkStar} className="star" alt="star icon." />
-        <img src={pinkStar} className="star" alt="star icon." />
-        <img src={greyStar} className="star" alt="star icon." />
+        {stars}
       </div>
     );
   };
