@@ -10,13 +10,12 @@ export default function Carrousel(props) {
     // const currentImage = props.listing.pictures[currentIndex]
     const allImages = props.listing.pictures.map((image, index) => {
         return (
-            <div className={currentIndex === index ? "carrousel--slide carrousel--active" : "carrousel--slide"}>
-                {index === currentIndex && <img src={image} className="carrousel--image" alt="Carrousel d'images du logement." />}
+            <div key={index} className={currentIndex === index ? "carrousel--slide carrousel--active" : "carrousel--slide"}>
+                {index === currentIndex && <img src={image} className="carrousel--image" alt="Carrousel d'images du logement."  />}
             </div>
         )
     })
     
-
     function prevImage() {
         SetCurrentIndex(prevIndex => prevIndex === 0 ? prevIndex = maxIndex : prevIndex = prevIndex - 1)
     }
