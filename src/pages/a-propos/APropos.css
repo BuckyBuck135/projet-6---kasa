@@ -1,15 +1,21 @@
-/* .a-propos--hero {
-    min-height: 220px;
-    background:  rgb(0, 0, 0, 0.3) url(/public/images/kalen-emsley-Bkci_8qcdvQ-unsplash\ 2.png);
-    background-position: center;
-    background-size: cover;
-    mix-blend-mode: multiply;
-    border-radius: 10px;
-    margin-bottom: 20px;
-} */
+.a-propos {
+    animation: slide-in 0.8s
+}
 
 section.a-propos img.hero--image {
     height: 220px
+}
+
+@keyframes slide-in {
+    from {
+      transform: translateX(-50%);
+      opacity: 0;
+
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
 }
 
 @media screen and (min-width: 768px){

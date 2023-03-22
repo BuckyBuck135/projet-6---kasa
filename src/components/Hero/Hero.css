@@ -23,7 +23,21 @@
     padding: 0 16px;
     text-shadow: 0 0 100px black;
     position: absolute;
+    animation: slide-in-from-top 1.2s;
 }
+
+@keyframes slide-in-from-top {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+
+    }
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
 
 @media screen and (min-width: 768px){
     .hero {

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Collapsible.css"
 import downArrow from "../../images/down-arrow.svg"
-import upArrow from "../../images/up-arrow.svg"
 
 // implement collapsible arrow function
 
@@ -27,7 +26,7 @@ export default function Collapsible(props) {
         <article key={props.id} className="collapsible">
             <div onClick={toggle} className="collapsible--title-container">
                 <h3 className="collapsible--title">{props.title}</h3>
-                <img src={isShown ? upArrow : downArrow} className="collapsible--icon" alt="icône d'ouverture ou fermeture."/>
+                <img src={downArrow} className={isShown ? "collapsible--icon rotate" : "collapsible--icon"} alt="icône d'ouverture ou fermeture."/>
             </div>
             {isShown && <div className="collapsible--text-container animate">{content}</div>}
         </article>

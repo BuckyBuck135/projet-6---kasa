@@ -19,6 +19,10 @@
     height: 12px;
 }
 
+.rotate {
+    animation: rotate 0.3s forwards;
+}
+
 .collapsible--title {
     color: white;
     font-weight: 500;
@@ -44,14 +48,26 @@
 
 .animate {
     animation-duration: 0.3s;
-    animation-name: animate-fade;
+    animation-name: fade;
     animation-fill-mode: backwards;
   }
   
-@keyframes animate-fade {
+@keyframes fade {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+@keyframes rotate {
+    from {
+      -webkit-transform: rotate3d(0, 0, 1, 0deg);
+      transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    to {
+      -webkit-transform: rotate3d(0, 0, 1, 180deg);
+      transform: rotate3d(0, 0, 1, 180deg);
+    }
+  }
 
 @media screen and (min-width: 768px){
     .collapsible {
