@@ -10,7 +10,6 @@ import APropos from "./pages/a-propos/APropos.js"
 import FicheLogement from "./pages/fiche-logement/FicheLogement.js"
 import Footer from "./components/Footer/Footer.js"
 
-// renders Navbar, Footer, and the 4 pages withing the container
 export default function App() {
   return (
     <BrowserRouter>
@@ -22,6 +21,7 @@ export default function App() {
               <Route path="/fiche-logement/:id" element={<FicheLogement />} />
               <Route path="/a-propos" element={<APropos />} />
               <Route path="/" element={<Home />} />
+              <Route path="/not-found" element={<NotFound />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
           </div>
@@ -31,8 +31,3 @@ export default function App() {
   );
 }
 
-// removed from App() until I know how to organize the different pages
-// <Home />
-// <NotFound />
-// <APropos />
-// <FicheLogement />
