@@ -2,7 +2,7 @@ import './App.css';
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import ScrollToTop from './components/Helpers/ScrollToTop';
+import ScrollToTop from './assets/utils/Helpers/ScrollToTop';
 import Navbar from "./components/Navbar/Navbar.js"
 import Home from "./pages/home/Home.js"
 import NotFound from "./pages/not-found/NotFound.js"
