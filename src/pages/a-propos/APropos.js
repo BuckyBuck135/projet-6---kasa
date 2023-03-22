@@ -3,9 +3,6 @@ import "./APropos.css"
 import Hero from "../../components/Hero/Hero";
 import Collapsible from "../../components/Collapsible/Collapsible"
 import headerImage from "../../images/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png"
-// import "./APropos.css"
-
-//active tag on the A propos anchor on navbar
 
 export default function APropos() {
     return (
