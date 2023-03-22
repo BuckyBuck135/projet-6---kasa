@@ -1,6 +1,6 @@
 import React from "react";
-import pinkVector from "../../images/pink-star-vector.svg"
-import greyVector from "../../images/grey-star-vector.svg"
+import pinkVector from "../../assets/images/pink-star-vector.svg"
+import greyVector from "../../assets/images/grey-star-vector.svg"
 import "./StarRating.css"
 
 export default function StarRating(props) {

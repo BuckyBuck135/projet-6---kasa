@@ -2,7 +2,7 @@ import React from "react";
 import "./APropos.css"
 import Hero from "../../components/Hero/Hero";
 import Collapsible from "../../components/Collapsible/Collapsible"
-import headerImage from "../../images/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png"
+import headerImage from "../../assets/images/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png"
 
 export default function APropos() {
     return (

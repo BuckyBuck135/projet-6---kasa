@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css"
 import Hero from "../../components/Hero/Hero";
 import Card from "../../components/Card/Card";
-import headerImage from "../../images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg"
+import headerImage from "../../assets/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg"
 
 const data = require("../../data/logements.json");
 

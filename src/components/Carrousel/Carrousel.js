@@ -1,7 +1,7 @@
 import React from "react"
 import "./Carrousel.css"
-import nextArrow from "../../images/next-arrow.svg"
-import previousArrow from "../../images/previous-arrow.svg"
+import nextArrow from "../../assets/images/next-arrow.svg"
+import previousArrow from "../../assets/images/previous-arrow.svg"
 
 export default function Carrousel(props) {
     const maxIndex = props.listing.pictures.length - 1

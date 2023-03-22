@@ -1,6 +1,6 @@
 import React from "react";
 import "./Collapsible.css"
-import downArrow from "../../images/down-arrow.svg"
+import downArrow from "../../assets/images/down-arrow.svg"
 
 // implement collapsible arrow function
 

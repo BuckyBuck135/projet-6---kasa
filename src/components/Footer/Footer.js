@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import logo from "../../images/kasa-logo-white.png"
+import logo from "../../assets/images/kasa-logo-white.png"
 import "./Footer.css"
 
 export default function Footer() {
