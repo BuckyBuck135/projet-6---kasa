@@ -26,7 +26,6 @@ export default function Home() {
                 />
             </section>
             <section className="home">
-                {/* <Loader /> */}
                 {isLoading ? <Loader /> : cards}
             </section>
             
