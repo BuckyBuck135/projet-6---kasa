@@ -6,17 +6,23 @@ import Collapsible from "../../components/Collapsible/Collapsible"
 import StarRating from "../../components/StarRating/StarRating"
 import Host from "../../components/Host/Host"
 import NotFound from "../not-found/NotFound";
+import Loader from "../../components/Loader/Loader"
+import { UseGetListings } from "../../assets/utils/Helpers/Services";
 import "./FicheLogement.css"
 
-const data = require("../../data/logements.json");
-
 export default function FicheLogement() {
+    const data = UseGetListings("../../data/logements.json")
     const params = useParams()
-    const listing = data.find(item => item.id === params.id)
+    const listing = data.data.find(item => item.id === params.id)
 
-    if (!listing) {
-        return <NotFound />
-    } else {
+    const isLoading = data.state   
+
+    console.log(isLoading)
+
+    // let isLoading = false
+    if (isLoading) {
+        return <Loader />
+    } else if (listing){
         return ( 
             <section className="main">
                 
@@ -63,7 +69,21 @@ export default function FicheLogement() {
                 </div>
             </section>
         )
+    } else {
+        return <NotFound />
     }
-
-    
 }
+
+
+   // const [data, setData] = React.useState([])
+    // React.useEffect(() => {
+    //     // http://localhost:3000/data/logements.json
+    //     fetch("../../data/logements.json")
+    //         .then(res => res.text())
+    //         .then(text => {
+    //             setTimeout(() => {
+    //                 setData(JSON.parse(text))
+    //                 setIsLoading(false)
+    //             }, 1500)
+    //         }) 
+    // }, [])

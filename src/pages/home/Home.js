@@ -2,12 +2,14 @@ import React from "react";
 import "./Home.css"
 import Hero from "../../components/Hero/Hero";
 import Card from "../../components/Card/Card";
+import Loader from "../../components/Loader/Loader";
 import headerImage from "../../assets/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg"
-
-const data = require("../../data/logements.json");
+import {UseGetListings} from "../../assets/utils/Helpers/Services"
 
 export default function Home() {
-    const cards = data.map(item => {
+    const data = UseGetListings("./data/logements.json")
+    const isLoading = data.state 
+    const cards = data.data.map(item => {
         return (
             <Card 
                 key={item.id}
@@ -24,7 +26,8 @@ export default function Home() {
                 />
             </section>
             <section className="home">
-                {cards}
+                {/* <Loader /> */}
+                {isLoading ? <Loader /> : cards}
             </section>
             
         </section>
