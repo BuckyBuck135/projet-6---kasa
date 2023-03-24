@@ -1,5 +1,6 @@
 .a-propos {
-    animation: slide-in 0.8s
+    animation: slide-in 0.8s;
+    min-height: 100vh;
 }
 
 section.a-propos img.hero--image {

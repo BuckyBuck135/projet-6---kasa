@@ -4,6 +4,8 @@
 
 nav {
     padding: 20px;
+    max-width: 1440px;
+
 }
 
 nav > ul {
