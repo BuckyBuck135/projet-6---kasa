@@ -6,7 +6,7 @@ import downArrow from "../../assets/images/down-arrow.svg"
 
 export default function Collapsible(props) {
 
-    const [isShown, setIsShown] = React.useState(false)
+    const [isShown, setIsShown] = React.useState(true)
 
     function toggle() {
         setIsShown(prev => !prev)
