@@ -7,43 +7,45 @@ import StarRating from "../../components/StarRating/StarRating"
 import Host from "../../components/Host/Host"
 import NotFound from "../not-found/NotFound";
 import Loader from "../../components/Loader/Loader"
-import { UseGetListings } from "../../assets/utils/Helpers/Services";
+import { UseGetListingById } from "../../assets/services/Services";
 import "./FicheLogement.css"
 
-export default function FicheLogement() {
-    const data = UseGetListings("../../data/logements.json")
+export default function FicheLogement() {  
     const params = useParams()
-    const listing = data.data.find(item => item.id === params.id)
-    const isLoading = data.state   
+    const {listingById, isLoading, error} = UseGetListingById("../../data/logements.json", params)
+    const {title, location, tags, rating, host, description, equipments} = listingById   
 
+    if(error) {
+        return <span>There was a problem fetching data...</span>
+    }
     if (isLoading) {
         return <Loader />
-    } else if (listing){
+    } else if (listingById){
         return ( 
             <section className="main">
                 
                 <Carrousel 
-                    listing={listing}
+                    listing={listingById}
                 />
     
                 <div className="listing--content">
                     <div className="listing--content-wrapper">
                         <div className="listing--wrapper-left">
                             <div className="listing--heading">
-                                <h1>{listing.title}</h1>
-                                <h2>{listing.location}</h2>
+                                <h1>{title}</h1>
+                                <h2>{location}</h2>
                             </div>
                             <Tag 
-                                tags={listing.tags}
+                                tags={tags}
                             />
                         </div>
     
                         <div className="listing--wrapper-right">
                             <StarRating 
-                                rating={listing.rating}
+                                rating={rating}
                             />
                             <Host 
-                                host={listing.host}
+                                host={host}
                             />
                         </div>
                     </div>
@@ -51,7 +53,7 @@ export default function FicheLogement() {
                         <Collapsible 
                             type="paragraph"
                             title="Description"
-                            description={listing.description}
+                            description={description}
                             equipments={null}
                         />
     
@@ -59,7 +61,7 @@ export default function FicheLogement() {
                             type="list"
                             title="Equipements"
                             description={null}
-                            equipments={listing.equipments}
+                            equipments={equipments}
                         />
                     </div>
                 </div>

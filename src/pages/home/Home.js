@@ -4,12 +4,11 @@ import Hero from "../../components/Hero/Hero";
 import Card from "../../components/Card/Card";
 import Loader from "../../components/Loader/Loader";
 import headerImage from "../../assets/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg"
-import {UseGetListings} from "../../assets/utils/Helpers/Services"
+import {UseGetListings} from "../../assets/services/Services"
 
 export default function Home() {
-    const data = UseGetListings("./data/logements.json")
-    const isLoading = data.state 
-    const cards = data.data.map(item => {
+    const {listings, isLoading, error} = UseGetListings("./data/logements.json")
+    const cards = listings.map(item => {
         return (
             <Card 
                 key={item.id}
@@ -17,18 +16,22 @@ export default function Home() {
             />
         )
     })
-    return (
-        <section>
+    if(error) {
+        return <span>There was a problem fetching data...</span>
+    } else if(listings) {
+        return (
             <section>
-                <Hero 
-                image={headerImage}
-                title="Chez vous, partout et ailleurs"
-                />
+                <section>
+                    <Hero 
+                    image={headerImage}
+                    title="Chez vous, partout et ailleurs"
+                    />
+                </section>
+                <section className="home">
+                    {isLoading ? <Loader /> : cards}
+                </section>
+                
             </section>
-            <section className="home">
-                {isLoading ? <Loader /> : cards}
-            </section>
-            
-        </section>
-    )
+        )
+    }
 }
