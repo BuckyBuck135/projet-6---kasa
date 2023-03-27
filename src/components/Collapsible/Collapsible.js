@@ -1,6 +1,7 @@
 import React from "react";
 import "./Collapsible.css"
 import downArrow from "../../assets/images/down-arrow.svg"
+import { paragraph, list } from "../../assets/utils/Constants";
 
 // implement collapsible arrow function
 
@@ -14,10 +15,10 @@ export default function Collapsible(props) {
 
     // managing content of the collapsible depending on type: paragraph or list
     let content 
-    if(props.type === "paragraph") {
+    if(props.type === paragraph) {
         content = (<p className="collapsible--description">{props.description}</p>)
 
-    } else if (props.type === "list"){
+    } else if (props.type === list){
         const amenities = props.equipments.map((item, index) => <li key={index} className="collapsible--li">{item}</li>)
         content = (<ul className="collapsible--description">{amenities}</ul>)
     } 
