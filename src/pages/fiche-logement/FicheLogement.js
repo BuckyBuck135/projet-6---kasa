@@ -13,14 +13,15 @@ import "./FicheLogement.css"
 export default function FicheLogement() {  
     const params = useParams()
     const {listingById, isLoading, error} = UseGetListingById("../../data/logements.json", params)
-    const {title, location, tags, rating, host, description, equipments} = listingById   
+
 
     if(error) {
         return <span>Problème de connexion au serveur...</span>
-    }
-    if (isLoading) {
+    } else if (isLoading) {
         return <Loader />
-    } else if (listingById){
+    } else if (!listingById){
+        return <NotFound />
+    } else {
         return ( 
             <section className="main">
                 
@@ -32,20 +33,20 @@ export default function FicheLogement() {
                     <div className="listing--content-wrapper">
                         <div className="listing--wrapper-left">
                             <div className="listing--heading">
-                                <h1>{title}</h1>
-                                <h2>{location}</h2>
+                                <h1>{listingById.title}</h1>
+                                <h2>{listingById.location}</h2>
                             </div>
                             <Tag 
-                                tags={tags}
+                                tags={listingById.tags}
                             />
                         </div>
     
                         <div className="listing--wrapper-right">
                             <StarRating 
-                                rating={rating}
+                                rating={listingById.rating}
                             />
                             <Host 
-                                host={host}
+                                host={listingById.host}
                             />
                         </div>
                     </div>
@@ -53,7 +54,7 @@ export default function FicheLogement() {
                         <Collapsible 
                             type="paragraph"
                             title="Description"
-                            description={description}
+                            description={listingById.description}
                             equipments={null}
                         />
     
@@ -61,13 +62,11 @@ export default function FicheLogement() {
                             type="list"
                             title="Equipements"
                             description={null}
-                            equipments={equipments}
+                            equipments={listingById.equipments}
                         />
                     </div>
                 </div>
             </section>
         )
-    } else {
-        return <NotFound />
     }
 }

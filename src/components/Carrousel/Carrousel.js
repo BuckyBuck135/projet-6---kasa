@@ -4,11 +4,12 @@ import nextArrow from "../../assets/images/next-arrow.svg"
 import previousArrow from "../../assets/images/previous-arrow.svg"
 
 export default function Carrousel(props) {
-    const maxIndex = props.listing.pictures.length - 1
+    const pictures = props.listing.pictures
+    const maxIndex = pictures.length - 1
     const [currentIndex, SetCurrentIndex] = React.useState(0)
-
-    // const currentImage = props.listing.pictures[currentIndex]
-    const allImages = props.listing.pictures.map((image, index) => {
+    console.log(pictures.length)
+    // const currentImage = pictures[currentIndex]
+    const carrouselImages = pictures.map((image, index) => {
         return (
             <div key={index} className={currentIndex === index ? "carrousel--slide carrousel--active" : "carrousel--slide"}>
                 {index === currentIndex && <img src={image} className="carrousel--image" alt="Carrousel d'images du logement."  />}
@@ -26,11 +27,13 @@ export default function Carrousel(props) {
 
     return (
         <figure className="carrousel--container">
-            {allImages}
-            <img src={previousArrow} onClick={prevImage} className="carrousel--arrow previous" alt="Icône de défilement en avant du carrousel."/> 
-            
-            <img src={nextArrow} onClick={nextImage} className="carrousel--arrow next" alt="Icône de défilement en arrière du carrousel."/> 
+            {carrouselImages}
+            {pictures.length > 1 && <div>
+                <img src={previousArrow} onClick={prevImage} className="carrousel--arrow previous" alt="Icône de défilement en avant du carrousel."/> 
+                <img src={nextArrow} onClick={nextImage} className="carrousel--arrow next" alt="Icône de défilement en arrière du carrousel."/> 
+            </div>}
             <figcaption className="carrousel--caption">{currentIndex+1}/{maxIndex+1}</figcaption>
+            
         </figure>
     )
 }
