@@ -7,7 +7,7 @@ import { paragraph, list } from "../../assets/utils/Constants";
 
 export default function Collapsible(props) {
 
-    const [isShown, setIsShown] = React.useState(true)
+    const [isShown, setIsShown] = React.useState(false)
 
     function toggle() {
         setIsShown(prev => !prev)
