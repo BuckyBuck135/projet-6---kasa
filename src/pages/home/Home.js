@@ -17,7 +17,7 @@ export default function Home() {
         )
     })
     if(error) {
-        return <span>There was a problem fetching data...</span>
+        return <span>Problème de connexion au serveur...</span>
     } else if(listings) {
         return (
             <section>

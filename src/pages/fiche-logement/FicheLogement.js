@@ -16,7 +16,7 @@ export default function FicheLogement() {
     const {title, location, tags, rating, host, description, equipments} = listingById   
 
     if(error) {
-        return <span>There was a problem fetching data...</span>
+        return <span>Problème de connexion au serveur...</span>
     }
     if (isLoading) {
         return <Loader />
