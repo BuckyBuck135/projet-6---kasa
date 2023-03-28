@@ -28,12 +28,13 @@ export default function Carrousel(props) {
     return (
         <figure className="carrousel--container">
             {carrouselImages}
-            {pictures.length > 1 && <div>
-                <img src={previousArrow} onClick={prevImage} className="carrousel--arrow previous" alt="Icône de défilement en avant du carrousel."/> 
-                <img src={nextArrow} onClick={nextImage} className="carrousel--arrow next" alt="Icône de défilement en arrière du carrousel."/> 
-            </div>}
-            <figcaption className="carrousel--caption">{currentIndex+1}/{maxIndex+1}</figcaption>
-            
+            {pictures.length > 1 && 
+                <div>
+                    <img src={previousArrow} onClick={prevImage} className="carrousel--arrow previous" alt="Icône de défilement en avant du carrousel."/> 
+                    <img src={nextArrow} onClick={nextImage} className="carrousel--arrow next" alt="Icône de défilement en arrière du carrousel."/> 
+                    <figcaption className="carrousel--caption">{currentIndex+1}/{maxIndex+1}</figcaption>
+                </div>
+            }
         </figure>
     )
 }
