@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
 import ScrollToTop from './assets/utils/ScrollToTop';
 import Navbar from "./components/Navbar/Navbar.js"
@@ -22,7 +22,7 @@ export default function App() {
               <Route path="/a-propos" element={<APropos />} />
               <Route path="/" element={<Home />} />
               <Route path="/not-found" element={<NotFound />} />
-              <Route path="/*" element={<NotFound />} />
+              <Route path="/*" element={<Navigate replace to="/not-found" />} />
             </Routes>
           </div>
           <Footer />

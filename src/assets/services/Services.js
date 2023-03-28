@@ -1,7 +1,10 @@
 import {useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
+
 
 //custom hook used in Home.js
 export function UseGetListings(url) {
+        const navigate = useNavigate()
         const [listings, setListings] = useState([])
         const [isLoading, setIsLoading] = useState(true)
         const [error, setError] = useState(false)
@@ -16,6 +19,7 @@ export function UseGetListings(url) {
                 catch(error) {
                     console.log(error)
                     setError(true)
+                    navigate("/not-found", { state: { message: "Failed to find property" } })
                 }
                 finally {
                     setTimeout(() => {
@@ -24,13 +28,14 @@ export function UseGetListings(url) {
                 }
             }
             getListings()
-        }, [url])
+        }, [url, navigate])
 
         return {listings, isLoading, error}
 }
 
 //custom hook used in FicheLogement.js
 export function UseGetListingById(url, params) {
+    const navigate = useNavigate()
     const [listingById, setListingById] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(false)
@@ -45,6 +50,7 @@ export function UseGetListingById(url, params) {
             catch(err) {
                 console.log(err)
                 setError(true)
+                navigate("/not-found")
             }
             finally {
                 setTimeout(() => {
@@ -53,7 +59,7 @@ export function UseGetListingById(url, params) {
             }
         }
         getListingById()
-    }, [url, params.id])
+    }, [url, params.id, navigate])
 
     return {listingById, isLoading, error}
 }
