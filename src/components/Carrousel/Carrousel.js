@@ -7,8 +7,7 @@ export default function Carrousel(props) {
     const pictures = props.listing.pictures
     const maxIndex = pictures.length - 1
     const [currentIndex, SetCurrentIndex] = React.useState(0)
-    console.log(pictures.length)
-    // const currentImage = pictures[currentIndex]
+
     const carrouselImages = pictures.map((image, index) => {
         return (
             <div key={index} className={currentIndex === index ? "carrousel--slide carrousel--active" : "carrousel--slide"}>
