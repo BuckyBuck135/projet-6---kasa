@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 //custom hook used in Home.js
-export function UseGetListings(url) {
+export function UseGetListings() {
         const navigate = useNavigate()
         const [listings, setListings] = useState([])
         const [isLoading, setIsLoading] = useState(true)
@@ -12,14 +12,14 @@ export function UseGetListings(url) {
         useEffect(() => {
             async function getListings() {
                 try {
-                    const response = await fetch(url)
+                    const response = await fetch("../../../data/logements.json")
                     const data = await response.json()
                     setListings(data)
                 }
                 catch(error) {
                     console.log(error)
                     setError(true)
-                    navigate("/not-found", { state: { message: "Failed to find property" } })
+                    navigate("/not-found", { state: { message: "Erreur dans la récupération des données" } })
                 }
                 finally {
                     setTimeout(() => {
@@ -28,13 +28,13 @@ export function UseGetListings(url) {
                 }
             }
             getListings()
-        }, [url, navigate])
+        }, [ navigate])
 
         return {listings, isLoading, error}
 }
 
 //custom hook used in FicheLogement.js
-export function UseGetListingById(url, params) {
+export function UseGetListingById(params) {
     const navigate = useNavigate()
     const [listingById, setListingById] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -43,14 +43,14 @@ export function UseGetListingById(url, params) {
     useEffect(() => {
         async function getListingById() {
             try {
-                const response = await fetch(url)
+                const response = await fetch("../../data/logements.json")
                 const data = await response.json()
                 setListingById(data.find(item => item.id === params.id))
             }
             catch(err) {
                 console.log(err)
                 setError(true)
-                navigate("/not-found")
+                navigate("/not-found", { state: { message: "Erreur dans la récupération des données" } })
             }
             finally {
                 setTimeout(() => {
@@ -59,7 +59,7 @@ export function UseGetListingById(url, params) {
             }
         }
         getListingById()
-    }, [url, params.id, navigate])
+    }, [params.id, navigate])
 
     return {listingById, isLoading, error}
 }
