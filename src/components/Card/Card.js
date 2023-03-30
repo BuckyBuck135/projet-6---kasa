@@ -10,6 +10,5 @@ export default function Card(props) {
                     <h2 className="card--title">{props.item.title}</h2>
             </article>
         </Link>
-
     )
 }
