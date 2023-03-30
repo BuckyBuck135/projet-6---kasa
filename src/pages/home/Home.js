@@ -4,10 +4,10 @@ import Hero from "../../components/Hero/Hero";
 import Card from "../../components/Card/Card";
 import Loader from "../../components/Loader/Loader";
 import headerImage from "../../assets/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg"
-import {UseGetListings} from "../../assets/services/Services"
+import {UseGetListings} from "../../services/Services"
 
 export default function Home() {
-    const {listings, isLoading, error} = UseGetListings("./data/logements.json")
+    const {listings, isLoading, error} = UseGetListings()
     const cards = listings.map(item => {
         return (
             <Card 
@@ -30,7 +30,6 @@ export default function Home() {
                 <section className="home">
                     {isLoading ? <Loader /> : cards}
                 </section>
-                
             </section>
         )
     }
