@@ -6,13 +6,14 @@ import Collapsible from "../../components/Collapsible/Collapsible"
 import StarRating from "../../components/StarRating/StarRating"
 import Host from "../../components/Host/Host"
 import Loader from "../../components/Loader/Loader"
-import { UseGetListingById } from "../../assets/services/Services";
+import { UseGetListingById } from "../../services/Services";
+import { paragraph, list } from "../../assets/utils/Constants";
 import "./FicheLogement.css"
 
 export default function FicheLogement() {  
     const navigate = useNavigate()
     const params = useParams()
-    const {listingById, isLoading, error} = UseGetListingById("../../data/logements.json", params)
+    const {listingById, isLoading, error} = UseGetListingById(params)
 
     // destructuring listingById and proving a fallback "|| {}" if undefined
     const {title, location, tags, rating, host, description, equipments} = listingById || {}
@@ -69,14 +70,14 @@ export default function FicheLogement() {
                     </div>
                     <div className="collapsible-container">
                         <Collapsible 
-                            type="paragraph"
+                            type={paragraph}
                             title="Description"
                             description={description}
                             equipments={null}
                         />
     
                         <Collapsible 
-                            type="list"
+                            type={list}
                             title="Equipements"
                             description={null}
                             equipments={equipments}
