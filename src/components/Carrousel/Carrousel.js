@@ -6,7 +6,7 @@ import previousArrow from "../../assets/images/previous-arrow.svg"
 export default function Carrousel(props) {
     const pictures = props.listing.pictures
     const maxIndex = pictures.length - 1
-    const [currentIndex, SetCurrentIndex] = React.useState(0)
+    const [currentIndex, setCurrentIndex] = React.useState(0)
 
     const carrouselImages = pictures.map((image, index) => {
         return (
@@ -17,11 +17,11 @@ export default function Carrousel(props) {
     })
     
     function prevImage() {
-        SetCurrentIndex(prevIndex => prevIndex === 0 ? prevIndex = maxIndex : prevIndex = prevIndex - 1)
+        setCurrentIndex(prevIndex => prevIndex === 0 ? maxIndex : prevIndex - 1)
     }
 
     function nextImage() {
-        SetCurrentIndex(prevIndex => prevIndex === maxIndex ? prevIndex = 0 : prevIndex = prevIndex + 1)
+        setCurrentIndex(prevIndex => prevIndex === maxIndex ? 0 : prevIndex + 1)
     }
 
     return (
